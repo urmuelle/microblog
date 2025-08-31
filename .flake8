@@ -10,6 +10,7 @@ exclude =
     __pycache__,
     .venv,
     build,
-    dist
+    dist,
+    .github
 show-source = true
 statistics = true
