@@ -7,6 +7,7 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
+from flask_moment import Moment
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -15,6 +16,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = "login"  # type: ignore
 mail = Mail(app)
+moment = Moment(app)
 
 if not app.debug:
     # Send errors by email to the administrators
@@ -54,6 +56,7 @@ if not app.debug:
     app.logger.info("Microblog startup")
 
 from app import routes, models, errors  # noqa: F401
+
 login.login_view = "login"
 
 
