@@ -24,3 +24,5 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     ADMINS = ["urs.mueller2@gmail.com"]
+    # Languages
+    LANGUAGES = ["en", "de"]

@@ -1,4 +1,4 @@
-2025-09-06 17:03:01,690 ERROR: Exception on /index [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
+2025-09-06 20:50:01,118 ERROR: Exception on /login [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,17 +12,23 @@ Traceback (most recent call last):
   File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 22, in index
-    form = PostForm()
-           ^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\wtforms\form.py", line 209, in __call__
-    return type.__call__(cls, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: PostForm.__init__() missing 1 required positional argument: 'original_username'
-2025-09-06 17:03:03,833 ERROR: Exception on /index [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 95, in login
+    return render_template("login.html", title=_("Sign In"), form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\templates\login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2025-09-06 20:50:01,118 ERROR: Exception on /login [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -36,17 +42,26 @@ Traceback (most recent call last):
   File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 22, in index
-    form = PostForm()
-           ^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\wtforms\form.py", line 209, in __call__
-    return type.__call__(cls, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: PostForm.__init__() missing 1 required positional argument: 'original_username'
-2025-09-06 17:03:03,833 ERROR: Exception on /index [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 95, in login
+    return render_template("login.html", title=_("Sign In"), form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\templates\login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2025-09-06 20:53:27,283 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:65]
+2025-09-06 20:53:27,340 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:105]
+2025-09-06 20:53:27,340 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:105]
+2025-09-06 20:53:29,487 ERROR: Exception on /login [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -60,52 +75,79 @@ Traceback (most recent call last):
   File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 22, in index
-    form = PostForm()
-           ^^^^^^^^^^
-  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\wtforms\form.py", line 209, in __call__
-    return type.__call__(cls, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: PostForm.__init__() missing 1 required positional argument: 'original_username'
-2025-09-06 17:03:22,731 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:56]
-2025-09-06 17:03:22,768 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:95]
-2025-09-06 17:03:22,768 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:95]
-2025-09-06 17:11:33,101 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:56]
-2025-09-06 17:11:34,605 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:95]
-2025-09-06 17:11:34,605 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:95]
-2025-09-06 17:12:05,034 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:56]
-2025-09-06 17:12:05,076 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:95]
-2025-09-06 17:12:05,076 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:95]
-2025-09-06 17:20:23,226 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:20:23,289 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:20:23,289 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:21:24,673 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:21:24,718 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:21:24,718 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:22:08,557 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:22:08,606 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:22:08,606 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:26:54,132 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:26:54,185 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:26:54,185 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:27:11,980 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:27:12,039 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:27:12,039 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:28:04,161 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:28:04,213 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:28:04,213 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:28:45,568 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:28:45,621 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:28:45,621 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:28:50,020 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:28:50,075 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:28:50,075 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:29:12,826 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 17:29:12,881 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 17:29:12,881 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 20:07:13,013 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:54]
-2025-09-06 20:07:13,068 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
-2025-09-06 20:07:13,068 INFO: Microblog startup [in D:\Programmieren\Python\Flask\Tutorials\microblog\app\__init__.py:93]
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 95, in login
+    return render_template("login.html", title=_("Sign In"), form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\templates\login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2025-09-06 20:53:29,487 ERROR: Exception on /login [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 95, in login
+    return render_template("login.html", title=_("Sign In"), form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\templates\login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2025-09-06 20:53:30,471 ERROR: Exception on /login [GET] [in D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\routes.py", line 95, in login
+    return render_template("login.html", title=_("Sign In"), form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\Programmieren\Python\Flask\Tutorials\microblog\app\templates\login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
