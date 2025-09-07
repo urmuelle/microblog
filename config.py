@@ -17,5 +17,6 @@ class Config:
     ADMINS = ["urs.mueller2@gmail.com"]
     # Languages
     LANGUAGES = ['en', 'de']
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     # Pagination
     POSTS_PER_PAGE = 3
