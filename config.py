@@ -22,3 +22,5 @@ class Config:
     MS_TRANSLATOR_KEY = os.environ.get("MS_TRANSLATOR_KEY")
     # Pagination
     POSTS_PER_PAGE = 3
+    # Elasticsearch
+    ELASTICSEARCH_URL = os.environ.get("ELASTICSEARCH_URL")
